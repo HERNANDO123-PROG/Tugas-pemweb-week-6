@@ -1,0 +1,167 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap');
+
+/* Reset CSS untuk semua elemen */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+/* Styling untuk body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right, #333333, #555555);
+    color: #fff;
+}
+
+/* Styling untuk anchor tag */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container untuk centering */
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+/* Styling untuk kalkulator */
+.calculator {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+
+/* Styling untuk tombol ganti tema */
+.theme-toggler {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Styling untuk tombol ganti tema aktif */
+.theme-toggler.active {
+    color: #333;
+}
+
+/* Styling untuk efek bayangan */
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+/* Styling untuk display hasil kalkulasi */
+#display {
+    margin: 0 10px;
+    padding: 3px;
+    height: 60px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 23px;
+    margin-bottom: 20px;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk tema terang pada display */
+.calculator.light #display {
+    background-color: #f0f0f0; 
+    color: #333; 
+    border: 1px solid #b0b0b0; 
+}
+
+/* Styling untuk tema gelap pada display */
+.calculator.dark #display {
+    background-color: #333; 
+    color: #fff; 
+    border: 1px solid #666; 
+}
+
+/* Styling untuk scrollbar di display */
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+/* Styling untuk tombol kalkulator */
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 200ms ease;
+}
+
+/* Efek hover pada tombol */
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Styling untuk tema terang */
+.calculator.light {
+    background-color: #fff;
+    color: #0a1e23;
+}
+
+/* Styling untuk tombol aritmatika pada tema terang */
+.calculator.light button.button-arithmetic {
+    background-color: #e3a700;
+    color: #000000;
+}
+
+/* Styling untuk tombol lainnya pada tema terang */
+.calculator.light button.button {
+    background-color: #000000;
+    color: #fefefe;
+}
+
+/* Styling untuk tema gelap */
+.calculator.dark {
+    background-color: #071115;
+    color: #f8fafb;
+}
+
+/* Styling untuk tombol aritmatika pada tema gelap */
+.calculator.dark button.button-arithmetic {
+    background-color: #1b2f38;
+    color: #f7f7f7;
+}
+
+/* Styling untuk tombol lainnya pada tema gelap */
+.calculator.dark button.button {
+    background-color: #f1e4e4;
+    color: #000000;
+}
+
+/* Grid untuk layout tombol */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
